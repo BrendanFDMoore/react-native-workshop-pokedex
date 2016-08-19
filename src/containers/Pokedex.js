@@ -8,22 +8,40 @@ import Immutable, { List } from 'immutable';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import clrs from '../utils/clrs';
+import Header from '../components/Header';
+import MediaObject from '../components/MediaObject';
+import SearchBar from '../components/SearchBar';
 import { getPokemonImageUrl } from '../utils/pokemon';
 
 class Pokedex extends Component {
+
   render() {
+    const pokeMediaObjects = (pokemonData) => {
+        console.log('pokemonData:', pokemonData);
+        let pokeMOs = pokemonData.map((p, index) => <MediaObject key={index} name={p.name}></MediaObject>);
+        
+        console.log('pokeMOs:', pokeMOs);
+        
+        return (
+            pokeMOs
+        );
+    };
+    
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Header title="POKEDEX!">
+        </Header>
+        <View style={styles.body}>
+            <MediaObject name="test 1">
+            </MediaObject>
+            <MediaObject  name="test 2">
+            </MediaObject>
+            {pokeMediaObjects(this.props.pokemon)}
+        </View>
+        <View style={styles.footer}>
+            <SearchBar>
+            </SearchBar>
+        </View>
       </View>
     );
   }
@@ -35,16 +53,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  body: {
+    flex: 1,
+    backgroundColor: '#33FFFF',
+    alignSelf: 'stretch',
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
+  footer: {
+    // textAlign: 'center',
+    backgroundColor: '#333333',
     marginBottom: 5,
+    alignSelf: 'stretch',
   },
 });
 
@@ -55,7 +75,7 @@ export default connect(
 
 function mapStateToProps(state) {
   return {
-    pokemon: state.pokemon.get('all'),
+    pokemon: state.pokemon.get('all').toJS(),
     query: state.pokemon.get('query'),
   };
 }
