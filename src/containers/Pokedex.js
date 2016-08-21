@@ -18,7 +18,7 @@ class Pokedex extends Component {
   render() {
     const pokeMediaObjects = (pokemonData) => {
         console.log('pokemonData:', pokemonData);
-        let pokeMOs = pokemonData.map((p, index) => <MediaObject key={index} name={p.name}></MediaObject>);
+        let pokeMOs = pokemonData.map((p, index) => <MediaObject key={index} name={p.name} imgUrl={getPokemonImageUrl(p)}></MediaObject>);
         
         console.log('pokeMOs:', pokeMOs);
         
