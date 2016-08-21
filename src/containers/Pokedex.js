@@ -20,7 +20,7 @@ class Pokedex extends Component {
         console.log('pokemonData:', pokemonData);
         if (pokemonData.length <1 )
           return (<MediaObject name="No results to display"></MediaObject>)
-        let pokeMOs = pokemonData.map((p, index) => <MediaObject key={index} name={p.name} imgUrl={getPokemonImageUrl(p)}></MediaObject>);
+        let pokeMOs = pokemonData.map((p, index) => <MediaObject key={index} rowId={index} name={p.name} imgUrl={getPokemonImageUrl(p)}></MediaObject>);
         
         console.log('pokeMOs:', pokeMOs);
         

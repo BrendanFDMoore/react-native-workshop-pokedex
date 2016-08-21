@@ -20,10 +20,17 @@ const firstLetterUpper = (str) => {
   }
 }
 
+const rowColours = ['#CCFFCC', '#AACCAA'];
+
 class MediaObject extends Component {
+
   render() {
+    const rowStyle = [
+      styles.container, 
+      {'backgroundColor': rowColours[this.props.rowId % rowColours.length]}
+    ];
     return (
-      <TouchableOpacity style={styles.container}>
+      <TouchableOpacity style={rowStyle}>
         <View style={styles.imageWrapper}>
           <Image source={{uri: this.props.imgUrl}} style={styles.image}>
           </Image>
@@ -41,7 +48,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     // flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#CCFFCC',
+    // backgroundColor: '#CCFFCC',
     height: 60,
     alignSelf: 'stretch',
   },
@@ -49,6 +56,8 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignSelf: 'stretch',
       // flex: 1,
+      borderWidth: 1,
+      borderColor: 'green',
   },
   image: {
     borderWidth: 1,
@@ -61,13 +70,13 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 20,
     paddingLeft: 10,
-    backgroundColor: '#55cc55',
+    // backgroundColor: '#55cc55',
     fontWeight: 'bold',
     textAlign: 'left',
-    textAlignVertical: 'center'
+    textAlignVertical: 'center',
     // justifyContent: 'center',
-    // borderWidth: 1,
-    // borderColor: 'blue',
+    borderWidth: 1,
+    borderColor: 'blue',
     // height: 38,
   },
 });
