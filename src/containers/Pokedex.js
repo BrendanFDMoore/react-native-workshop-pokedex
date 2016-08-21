@@ -18,6 +18,8 @@ class Pokedex extends Component {
   render() {
     const pokeMediaObjects = (pokemonData) => {
         console.log('pokemonData:', pokemonData);
+        if (pokemonData.length <1 )
+          return (<MediaObject name="No results to display"></MediaObject>)
         let pokeMOs = pokemonData.map((p, index) => <MediaObject key={index} name={p.name} imgUrl={getPokemonImageUrl(p)}></MediaObject>);
         
         console.log('pokeMOs:', pokeMOs);
@@ -32,10 +34,6 @@ class Pokedex extends Component {
         <Header title="POKEDEX!">
         </Header>
         <View style={styles.body}>
-            <MediaObject name="test 1">
-            </MediaObject>
-            <MediaObject  name="test 2">
-            </MediaObject>
             {pokeMediaObjects(this.props.pokemon)}
         </View>
         <View style={styles.footer}>
