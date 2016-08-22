@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     // flex: 1,
     justifyContent: 'center',
     // backgroundColor: '#CCFFCC',
-    height: 60,
+    height: 80,
     alignSelf: 'stretch',
   },
   imageWrapper : {
@@ -62,13 +62,13 @@ const styles = StyleSheet.create({
   image: {
     borderWidth: 1,
     borderColor: 'red',
-    width: 38,
-    height: 38,
+    width: 58,
+    height: 58,
     // paddingTop: 15,
   },
   name: {
     flex: 1,
-    fontSize: 20,
+    fontSize: 24,
     paddingLeft: 10,
     // backgroundColor: '#55cc55',
     fontWeight: 'bold',
