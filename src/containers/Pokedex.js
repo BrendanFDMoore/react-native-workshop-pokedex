@@ -16,11 +16,20 @@ import { getPokemonImageUrl } from '../utils/pokemon';
 class Pokedex extends Component {
   
   render() {
+    const pokeMO = (p, index) => (
+      <MediaObject 
+        key={index} 
+        rowId={index} 
+        name={p.name} 
+        imgUrl={getPokemonImageUrl(p)}>
+      </MediaObject>
+    );
+
     const pokeMediaObjects = (pokemonData) => {
         console.log('pokemonData:', pokemonData);
         if (pokemonData.length <1 )
           return (<MediaObject name="No results to display"></MediaObject>)
-        let pokeMOs = pokemonData.map((p, index) => <MediaObject key={index} rowId={index} name={p.name} imgUrl={getPokemonImageUrl(p)}></MediaObject>);
+        let pokeMOs = pokemonData.map(pokeMO);
         
         console.log('pokeMOs:', pokeMOs);
         
