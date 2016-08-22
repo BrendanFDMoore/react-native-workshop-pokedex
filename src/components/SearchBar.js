@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     // flexDirection: 'row',
     // flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#FFDD55',
+    backgroundColor: '#999999',
     height: 80,
     alignSelf: 'stretch',
     padding: 10,
@@ -49,9 +49,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'left',
-    backgroundColor: '#CCCCCC',
-    borderWidth: 1,
-    borderColor: 'red',
+    backgroundColor: '#DEDEDE',
+    // borderWidth: 1,
+    // borderColor: 'red',
   },
 });
 

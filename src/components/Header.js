@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
   },
   title: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
   },

@@ -20,7 +20,7 @@ const firstLetterUpper = (str) => {
   }
 }
 
-const rowColours = ['#CCFFCC', '#AACCAA'];
+const rowColours = ['#CDCDCD', '#EFEFEF'];
 
 class MediaObject extends Component {
 
@@ -56,12 +56,12 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignSelf: 'stretch',
       // flex: 1,
-      borderWidth: 1,
-      borderColor: 'green',
+      // borderWidth: 1,
+      // borderColor: 'green',
   },
   image: {
-    borderWidth: 1,
-    borderColor: 'red',
+    // borderWidth: 1,
+    // borderColor: 'red',
     width: 58,
     height: 58,
     // paddingTop: 15,
@@ -75,8 +75,8 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     textAlignVertical: 'center',
     // justifyContent: 'center',
-    borderWidth: 1,
-    borderColor: 'blue',
+    // borderWidth: 1,
+    // borderColor: 'blue',
     // height: 38,
   },
 });

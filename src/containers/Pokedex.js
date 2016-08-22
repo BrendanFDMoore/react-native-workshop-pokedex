@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   },
   body: {
     flex: 1,
-    backgroundColor: '#33FFFF',
+    // backgroundColor: '#33FFFF',
     alignSelf: 'stretch',
   },
   footer: {
