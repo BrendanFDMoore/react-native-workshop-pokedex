@@ -14,7 +14,7 @@ import SearchBar from '../components/SearchBar';
 import { getPokemonImageUrl } from '../utils/pokemon';
 
 class Pokedex extends Component {
-
+  
   render() {
     const pokeMediaObjects = (pokemonData) => {
         console.log('pokemonData:', pokemonData);
@@ -37,7 +37,8 @@ class Pokedex extends Component {
             {pokeMediaObjects(this.props.pokemon)}
         </View>
         <View style={styles.footer}>
-            <SearchBar>
+            <SearchBar placeholder="Search..."
+              onSearchTextChange={this.props.filter}>
             </SearchBar>
         </View>
       </View>
@@ -73,7 +74,11 @@ export default connect(
 
 function mapStateToProps(state) {
   return {
-    pokemon: state.pokemon.get('all').toJS(),
+    pokemon: state.pokemon.get('all').toJS().filter((p) => {
+      return ( state.pokemon.get('query') === '' 
+        || p.name.indexOf(state.pokemon.get('query')) >= 0
+      );
+    }),
     query: state.pokemon.get('query'),
   };
 }
