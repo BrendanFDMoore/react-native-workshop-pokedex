@@ -15,7 +15,7 @@ export function viewAllPokemon() {
       .then(pokemon => {
         dispatch({
           type: POKEMON.RECEIVED_ALL_POKEMONS,
-          payload: pokemon.slice(0,50),
+          payload: pokemon.slice(0,500),
         })
       })
       .catch(error => {
