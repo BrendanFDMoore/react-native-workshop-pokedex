@@ -4,7 +4,7 @@ export function get(url) {
 }
 
 export function getAllPokemon() {
-  const requestUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=200&offset=0';
+  const requestUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=801&offset=0';
 //   const requestUrl = 'http://www.mocky.io/v2/57b6eab60f0000fa0b0b7a92';
 
   return get(requestUrl)
